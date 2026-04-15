@@ -1,0 +1,205 @@
+{
+  "software": "Salad Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T23:00:00.000000",
+  "nodes": {
+    "/grammar": {
+      "_node_type": "text",
+      "_path": "/grammar",
+      "_name": "grammar",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/grammar",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/grammar",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/grammar",
+          "_script_callback": "",
+          "_value": false
+        },
+        "text_string": {
+          "_name": "text_string",
+          "_type": "string",
+          "_node": "/grammar",
+          "_script_callback": "",
+          "_value": "{\"origin\": [\"#adjective# #noun# #verb# the #adjective# #noun#\", \"the #noun# of #adjective# #noun.s#\"], \"noun\": [\"salad\", \"loom\", \"word\", \"thread\", \"corpus\", \"leaf\", \"sentence\"], \"adjective\": [\"tangled\", \"green\", \"verbose\", \"ancient\", \"recursive\", \"crispy\"], \"verb\": [\"wove\", \"consumed\", \"rearranged\", \"distilled\", \"folded\"]}"
+        },
+        "pass_through": {
+          "_name": "pass_through",
+          "_type": "toggle",
+          "_node": "/grammar",
+          "_script_callback": "",
+          "_value": false
+        }
+      },
+      "_connections": []
+    },
+    "/tracery": {
+      "_node_type": "tracery_grammar",
+      "_path": "/tracery",
+      "_name": "tracery",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/tracery",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/tracery",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/tracery",
+          "_script_callback": "",
+          "_value": false
+        },
+        "start_symbol": {
+          "_name": "start_symbol",
+          "_type": "string",
+          "_node": "/tracery",
+          "_script_callback": "",
+          "_value": "origin"
+        },
+        "count": {
+          "_name": "count",
+          "_type": "int",
+          "_node": "/tracery",
+          "_script_callback": "",
+          "_value": 10
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/tracery",
+          "_script_callback": "",
+          "_value": 7
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/grammar",
+          "input_node_path": "/tracery",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_tracery_salad.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/tracery",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

@@ -1,0 +1,347 @@
+{
+  "software": "Salad Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T23:00:00.000000",
+  "nodes": {
+    "/source_a": {
+      "_node_type": "file_in",
+      "_path": "/source_a",
+      "_name": "source_a",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/source_a",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/source_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/source_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/source_a",
+          "_script_callback": "",
+          "_value": "data/corpora/cookbook.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/source_a",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/source_a",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/source_b": {
+      "_node_type": "file_in",
+      "_path": "/source_b",
+      "_name": "source_b",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0,
+        200
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/source_b",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/source_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/source_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/source_b",
+          "_script_callback": "",
+          "_value": "data/corpora/marine_biology.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/source_b",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/source_b",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/fold": {
+      "_node_type": "fold_in",
+      "_path": "/fold",
+      "_name": "fold",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300,
+        100
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/fold",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/fold",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/fold",
+          "_script_callback": "",
+          "_value": false
+        },
+        "split_point": {
+          "_name": "split_point",
+          "_type": "float",
+          "_node": "/fold",
+          "_script_callback": "",
+          "_value": 0.5
+        },
+        "mode": {
+          "_name": "mode",
+          "_type": "string",
+          "_node": "/fold",
+          "_script_callback": "",
+          "_value": "words"
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/source_a",
+          "input_node_path": "/fold",
+          "output_index": 0
+        },
+        {
+          "input_index": 1,
+          "output_node_path": "/source_b",
+          "input_node_path": "/fold",
+          "output_index": 0
+        }
+      ]
+    },
+    "/stutter": {
+      "_node_type": "repetition_injector",
+      "_path": "/stutter",
+      "_name": "stutter",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600,
+        100
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/stutter",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/stutter",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/stutter",
+          "_script_callback": "",
+          "_value": false
+        },
+        "mode": {
+          "_name": "mode",
+          "_type": "string",
+          "_node": "/stutter",
+          "_script_callback": "",
+          "_value": "phrase"
+        },
+        "density": {
+          "_name": "density",
+          "_type": "float",
+          "_node": "/stutter",
+          "_script_callback": "",
+          "_value": 0.12
+        },
+        "max_repeats": {
+          "_name": "max_repeats",
+          "_type": "int",
+          "_node": "/stutter",
+          "_script_callback": "",
+          "_value": 2
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/stutter",
+          "_script_callback": "",
+          "_value": 13
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/fold",
+          "input_node_path": "/stutter",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        900,
+        100
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_fold_in_mashup.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/stutter",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

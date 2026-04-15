@@ -1,0 +1,415 @@
+{
+  "software": "Text Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T21:51:29.026754",
+  "nodes": {
+    "/corpus_a": {
+      "_node_type": "file_in",
+      "_path": "/corpus_a",
+      "_name": "corpus_a",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        0.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": "data/corpora/legal.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/corpus_a",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/corpus_b": {
+      "_node_type": "file_in",
+      "_path": "/corpus_b",
+      "_name": "corpus_b",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        200.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": "data/corpora/romance.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/corpus_b",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/merge_corpora": {
+      "_node_type": "merge",
+      "_path": "/merge_corpora",
+      "_name": "merge_corpora",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300.0,
+        100.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/merge_corpora",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/merge_corpora",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/merge_corpora",
+          "_script_callback": "",
+          "_value": false
+        },
+        "single_string": {
+          "_name": "single_string",
+          "_type": "toggle",
+          "_node": "/merge_corpora",
+          "_script_callback": "",
+          "_value": true
+        },
+        "use_insert": {
+          "_name": "use_insert",
+          "_type": "toggle",
+          "_node": "/merge_corpora",
+          "_script_callback": "",
+          "_value": false
+        },
+        "insert_string": {
+          "_name": "insert_string",
+          "_type": "string",
+          "_node": "/merge_corpora",
+          "_script_callback": "",
+          "_value": "##N"
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/corpus_a",
+          "input_node_path": "/merge_corpora",
+          "output_index": 0
+        },
+        {
+          "input_index": 1,
+          "output_node_path": "/corpus_b",
+          "input_node_path": "/merge_corpora",
+          "output_index": 0
+        }
+      ]
+    },
+    "/train_model": {
+      "_node_type": "markov_train",
+      "_path": "/train_model",
+      "_name": "train_model",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600.0,
+        100.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/train_model",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/train_model",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/train_model",
+          "_script_callback": "",
+          "_value": false
+        },
+        "state_size": {
+          "_name": "state_size",
+          "_type": "int",
+          "_node": "/train_model",
+          "_script_callback": "",
+          "_value": 2
+        },
+        "retain_newlines": {
+          "_name": "retain_newlines",
+          "_type": "toggle",
+          "_node": "/train_model",
+          "_script_callback": "",
+          "_value": false
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/merge_corpora",
+          "input_node_path": "/train_model",
+          "output_index": 0
+        }
+      ]
+    },
+    "/generate": {
+      "_node_type": "markov_generate",
+      "_path": "/generate",
+      "_name": "generate",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        900.0,
+        100.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/generate",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/generate",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/generate",
+          "_script_callback": "",
+          "_value": false
+        },
+        "count": {
+          "_name": "count",
+          "_type": "int",
+          "_node": "/generate",
+          "_script_callback": "",
+          "_value": 10
+        },
+        "max_chars": {
+          "_name": "max_chars",
+          "_type": "int",
+          "_node": "/generate",
+          "_script_callback": "",
+          "_value": 280
+        },
+        "tries": {
+          "_name": "tries",
+          "_type": "int",
+          "_node": "/generate",
+          "_script_callback": "",
+          "_value": 100
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/generate",
+          "_script_callback": "",
+          "_value": -1
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/train_model",
+          "input_node_path": "/generate",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        1200.0,
+        100.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_markov_mashup.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/generate",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

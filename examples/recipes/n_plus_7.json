@@ -1,0 +1,212 @@
+{
+  "software": "Text Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T21:51:29.000275",
+  "nodes": {
+    "/source": {
+      "_node_type": "file_in",
+      "_path": "/source",
+      "_name": "source",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        0.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": "data/corpora/cookbook.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/source",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/n_plus_7": {
+      "_node_type": "n_plus_7",
+      "_path": "/n_plus_7",
+      "_name": "n_plus_7",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300.0,
+        0.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": false
+        },
+        "offset": {
+          "_name": "offset",
+          "_type": "int",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": 7
+        },
+        "target_pos": {
+          "_name": "target_pos",
+          "_type": "string",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": "nouns"
+        },
+        "dictionary": {
+          "_name": "dictionary",
+          "_type": "string",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": ""
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/source",
+          "input_node_path": "/n_plus_7",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600.0,
+        0.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_n_plus_7.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/n_plus_7",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

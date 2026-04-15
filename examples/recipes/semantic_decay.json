@@ -1,0 +1,301 @@
+{
+  "software": "Salad Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T23:00:00.000000",
+  "nodes": {
+    "/source": {
+      "_node_type": "file_in",
+      "_path": "/source",
+      "_name": "source",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": "data/corpora/romance.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/source",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/source",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/drift": {
+      "_node_type": "semantic_drift",
+      "_path": "/drift",
+      "_name": "drift",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": false
+        },
+        "drift_rate": {
+          "_name": "drift_rate",
+          "_type": "float",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": 0.4
+        },
+        "drift_distance": {
+          "_name": "drift_distance",
+          "_type": "float",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": 0.25
+        },
+        "target_pos": {
+          "_name": "target_pos",
+          "_type": "string",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": "NN,NNS,JJ"
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": 42
+        },
+        "model_path": {
+          "_name": "model_path",
+          "_type": "string",
+          "_node": "/drift",
+          "_script_callback": "",
+          "_value": ""
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/source",
+          "input_node_path": "/drift",
+          "output_index": 0
+        }
+      ]
+    },
+    "/gate": {
+      "_node_type": "coherence_gate",
+      "_path": "/gate",
+      "_name": "gate",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/gate",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/gate",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/gate",
+          "_script_callback": "",
+          "_value": false
+        },
+        "min_coherence": {
+          "_name": "min_coherence",
+          "_type": "float",
+          "_node": "/gate",
+          "_script_callback": "",
+          "_value": 0.05
+        },
+        "max_coherence": {
+          "_name": "max_coherence",
+          "_type": "float",
+          "_node": "/gate",
+          "_script_callback": "",
+          "_value": 0.6
+        },
+        "window": {
+          "_name": "window",
+          "_type": "int",
+          "_node": "/gate",
+          "_script_callback": "",
+          "_value": 3
+        },
+        "model_path": {
+          "_name": "model_path",
+          "_type": "string",
+          "_node": "/gate",
+          "_script_callback": "",
+          "_value": ""
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/drift",
+          "input_node_path": "/gate",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        900,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_semantic_decay.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/gate",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

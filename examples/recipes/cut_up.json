@@ -1,0 +1,401 @@
+{
+  "software": "Text Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T21:51:28.876965",
+  "nodes": {
+    "/file_a": {
+      "_node_type": "file_in",
+      "_path": "/file_a",
+      "_name": "file_a",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        0.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/file_a",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/file_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/file_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/file_a",
+          "_script_callback": "",
+          "_value": "data/corpora/cookbook.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/file_a",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/file_a",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/file_b": {
+      "_node_type": "file_in",
+      "_path": "/file_b",
+      "_name": "file_b",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        200.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/file_b",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/file_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/file_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/file_b",
+          "_script_callback": "",
+          "_value": "data/corpora/romance.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/file_b",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/file_b",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/shuffle_a": {
+      "_node_type": "shuffle",
+      "_path": "/shuffle_a",
+      "_name": "shuffle_a",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300.0,
+        0.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/shuffle_a",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/shuffle_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/shuffle_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/shuffle_a",
+          "_script_callback": "",
+          "_value": -1
+        },
+        "mode": {
+          "_name": "mode",
+          "_type": "string",
+          "_node": "/shuffle_a",
+          "_script_callback": "",
+          "_value": "words"
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/file_a",
+          "input_node_path": "/shuffle_a",
+          "output_index": 0
+        }
+      ]
+    },
+    "/shuffle_b": {
+      "_node_type": "shuffle",
+      "_path": "/shuffle_b",
+      "_name": "shuffle_b",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300.0,
+        200.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/shuffle_b",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/shuffle_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/shuffle_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/shuffle_b",
+          "_script_callback": "",
+          "_value": -1
+        },
+        "mode": {
+          "_name": "mode",
+          "_type": "string",
+          "_node": "/shuffle_b",
+          "_script_callback": "",
+          "_value": "words"
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/file_b",
+          "input_node_path": "/shuffle_b",
+          "output_index": 0
+        }
+      ]
+    },
+    "/merge": {
+      "_node_type": "merge",
+      "_path": "/merge",
+      "_name": "merge",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600.0,
+        100.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/merge",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/merge",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/merge",
+          "_script_callback": "",
+          "_value": false
+        },
+        "single_string": {
+          "_name": "single_string",
+          "_type": "toggle",
+          "_node": "/merge",
+          "_script_callback": "",
+          "_value": true
+        },
+        "use_insert": {
+          "_name": "use_insert",
+          "_type": "toggle",
+          "_node": "/merge",
+          "_script_callback": "",
+          "_value": false
+        },
+        "insert_string": {
+          "_name": "insert_string",
+          "_type": "string",
+          "_node": "/merge",
+          "_script_callback": "",
+          "_value": "##N"
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/shuffle_a",
+          "input_node_path": "/merge",
+          "output_index": 0
+        },
+        {
+          "input_index": 1,
+          "output_node_path": "/shuffle_b",
+          "input_node_path": "/merge",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        900.0,
+        100.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_cut_up.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/merge",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

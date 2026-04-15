@@ -1,0 +1,505 @@
+{
+  "software": "Salad Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T23:00:00.000000",
+  "nodes": {
+    "/corpus": {
+      "_node_type": "file_in",
+      "_path": "/corpus",
+      "_name": "corpus",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/corpus",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/corpus",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/corpus",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/corpus",
+          "_script_callback": "",
+          "_value": "data/corpora/cookbook.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/corpus",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/corpus",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/markov_train": {
+      "_node_type": "markov_train",
+      "_path": "/markov_train",
+      "_name": "markov_train",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/markov_train",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/markov_train",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/markov_train",
+          "_script_callback": "",
+          "_value": false
+        },
+        "state_size": {
+          "_name": "state_size",
+          "_type": "int",
+          "_node": "/markov_train",
+          "_script_callback": "",
+          "_value": 2
+        },
+        "retain_newlines": {
+          "_name": "retain_newlines",
+          "_type": "toggle",
+          "_node": "/markov_train",
+          "_script_callback": "",
+          "_value": false
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/corpus",
+          "input_node_path": "/markov_train",
+          "output_index": 0
+        }
+      ]
+    },
+    "/markov_gen": {
+      "_node_type": "markov_generate",
+      "_path": "/markov_gen",
+      "_name": "markov_gen",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/markov_gen",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/markov_gen",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/markov_gen",
+          "_script_callback": "",
+          "_value": false
+        },
+        "count": {
+          "_name": "count",
+          "_type": "int",
+          "_node": "/markov_gen",
+          "_script_callback": "",
+          "_value": 20
+        },
+        "max_chars": {
+          "_name": "max_chars",
+          "_type": "int",
+          "_node": "/markov_gen",
+          "_script_callback": "",
+          "_value": 200
+        },
+        "tries": {
+          "_name": "tries",
+          "_type": "int",
+          "_node": "/markov_gen",
+          "_script_callback": "",
+          "_value": 100
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/markov_gen",
+          "_script_callback": "",
+          "_value": 77
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/markov_train",
+          "input_node_path": "/markov_gen",
+          "output_index": 0
+        }
+      ]
+    },
+    "/n_plus_7": {
+      "_node_type": "n_plus_7",
+      "_path": "/n_plus_7",
+      "_name": "n_plus_7",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        900,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": false
+        },
+        "offset": {
+          "_name": "offset",
+          "_type": "int",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": 5
+        },
+        "target_pos": {
+          "_name": "target_pos",
+          "_type": "string",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": "nouns"
+        },
+        "dictionary": {
+          "_name": "dictionary",
+          "_type": "string",
+          "_node": "/n_plus_7",
+          "_script_callback": "",
+          "_value": ""
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/markov_gen",
+          "input_node_path": "/n_plus_7",
+          "output_index": 0
+        }
+      ]
+    },
+    "/sem_drift": {
+      "_node_type": "semantic_drift",
+      "_path": "/sem_drift",
+      "_name": "sem_drift",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        1200,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": false
+        },
+        "drift_rate": {
+          "_name": "drift_rate",
+          "_type": "float",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": 0.3
+        },
+        "drift_distance": {
+          "_name": "drift_distance",
+          "_type": "float",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": 0.2
+        },
+        "target_pos": {
+          "_name": "target_pos",
+          "_type": "string",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": "JJ,RB"
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": 55
+        },
+        "model_path": {
+          "_name": "model_path",
+          "_type": "string",
+          "_node": "/sem_drift",
+          "_script_callback": "",
+          "_value": ""
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/n_plus_7",
+          "input_node_path": "/sem_drift",
+          "output_index": 0
+        }
+      ]
+    },
+    "/cohere": {
+      "_node_type": "coherence_gate",
+      "_path": "/cohere",
+      "_name": "cohere",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        1500,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/cohere",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/cohere",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/cohere",
+          "_script_callback": "",
+          "_value": false
+        },
+        "min_coherence": {
+          "_name": "min_coherence",
+          "_type": "float",
+          "_node": "/cohere",
+          "_script_callback": "",
+          "_value": 0.05
+        },
+        "max_coherence": {
+          "_name": "max_coherence",
+          "_type": "float",
+          "_node": "/cohere",
+          "_script_callback": "",
+          "_value": 0.7
+        },
+        "window": {
+          "_name": "window",
+          "_type": "int",
+          "_node": "/cohere",
+          "_script_callback": "",
+          "_value": 4
+        },
+        "model_path": {
+          "_name": "model_path",
+          "_type": "string",
+          "_node": "/cohere",
+          "_script_callback": "",
+          "_value": ""
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/sem_drift",
+          "input_node_path": "/cohere",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        1800,
+        0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_the_full_salad.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/cohere",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

@@ -1,0 +1,488 @@
+{
+  "software": "Text Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-14T21:51:48.936842",
+  "nodes": {
+    "/corpus_a": {
+      "_node_type": "file_in",
+      "_path": "/corpus_a",
+      "_name": "corpus_a",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        0.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": "data/corpora/cookbook.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/corpus_a",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/corpus_a",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/corpus_b": {
+      "_node_type": "file_in",
+      "_path": "/corpus_b",
+      "_name": "corpus_b",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        200.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": "data/corpora/marine_biology.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/corpus_b",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/corpus_b",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/corpus_c": {
+      "_node_type": "file_in",
+      "_path": "/corpus_c",
+      "_name": "corpus_c",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        400.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/corpus_c",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/corpus_c",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/corpus_c",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/corpus_c",
+          "_script_callback": "",
+          "_value": "data/corpora/legal.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/corpus_c",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/corpus_c",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        }
+      },
+      "_connections": []
+    },
+    "/skeleton_template": {
+      "_node_type": "text",
+      "_path": "/skeleton_template",
+      "_name": "skeleton_template",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        0.0,
+        600.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/skeleton_template",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/skeleton_template",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/skeleton_template",
+          "_script_callback": "",
+          "_value": false
+        },
+        "text_string": {
+          "_name": "text_string",
+          "_type": "string",
+          "_node": "/skeleton_template",
+          "_script_callback": "",
+          "_value": "[\"The [JJ] [NN] [VBZ] the [JJ] [NN].\", \"A [JJ] [NN] [VBD] across the [JJ] [NN].\", \"The [NN] [VBD] the [NN] with [JJ] [NN].\"]"
+        },
+        "pass_through": {
+          "_name": "pass_through",
+          "_type": "toggle",
+          "_node": "/skeleton_template",
+          "_script_callback": "",
+          "_value": false
+        },
+        "per_item": {
+          "_name": "per_item",
+          "_type": "toggle",
+          "_node": "/skeleton_template",
+          "_script_callback": "",
+          "_value": true
+        },
+        "prefix": {
+          "_name": "prefix",
+          "_type": "toggle",
+          "_node": "/skeleton_template",
+          "_script_callback": "",
+          "_value": false
+        }
+      },
+      "_connections": []
+    },
+    "/pool_merge": {
+      "_node_type": "merge",
+      "_path": "/pool_merge",
+      "_name": "pool_merge",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        300.0,
+        200.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/pool_merge",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/pool_merge",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/pool_merge",
+          "_script_callback": "",
+          "_value": false
+        },
+        "single_string": {
+          "_name": "single_string",
+          "_type": "toggle",
+          "_node": "/pool_merge",
+          "_script_callback": "",
+          "_value": true
+        },
+        "use_insert": {
+          "_name": "use_insert",
+          "_type": "toggle",
+          "_node": "/pool_merge",
+          "_script_callback": "",
+          "_value": false
+        },
+        "insert_string": {
+          "_name": "insert_string",
+          "_type": "string",
+          "_node": "/pool_merge",
+          "_script_callback": "",
+          "_value": "##N"
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/corpus_a",
+          "input_node_path": "/pool_merge",
+          "output_index": 0
+        },
+        {
+          "input_index": 1,
+          "output_node_path": "/corpus_b",
+          "input_node_path": "/pool_merge",
+          "output_index": 0
+        },
+        {
+          "input_index": 2,
+          "output_node_path": "/corpus_c",
+          "input_node_path": "/pool_merge",
+          "output_index": 0
+        }
+      ]
+    },
+    "/fill_skeleton": {
+      "_node_type": "skeleton_fill",
+      "_path": "/fill_skeleton",
+      "_name": "fill_skeleton",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        600.0,
+        300.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/fill_skeleton",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/fill_skeleton",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/fill_skeleton",
+          "_script_callback": "",
+          "_value": false
+        },
+        "mode": {
+          "_name": "mode",
+          "_type": "string",
+          "_node": "/fill_skeleton",
+          "_script_callback": "",
+          "_value": "random"
+        },
+        "seed": {
+          "_name": "seed",
+          "_type": "int",
+          "_node": "/fill_skeleton",
+          "_script_callback": "",
+          "_value": -1
+        },
+        "allow_repeats": {
+          "_name": "allow_repeats",
+          "_type": "toggle",
+          "_node": "/fill_skeleton",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/skeleton_template",
+          "input_node_path": "/fill_skeleton",
+          "output_index": 0
+        },
+        {
+          "input_index": 1,
+          "output_node_path": "/pool_merge",
+          "input_node_path": "/fill_skeleton",
+          "output_index": 0
+        }
+      ]
+    },
+    "/output": {
+      "_node_type": "file_out",
+      "_path": "/output",
+      "_name": "output",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "_position": [
+        900.0,
+        300.0
+      ],
+      "_parms": {
+        "enabled": {
+          "_name": "enabled",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        },
+        "bypass": {
+          "_name": "bypass",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "display": {
+          "_name": "display",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": false
+        },
+        "file_name": {
+          "_name": "file_name",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": "output_exquisite_corpse.txt"
+        },
+        "file_text": {
+          "_name": "file_text",
+          "_type": "string",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": ""
+        },
+        "refresh": {
+          "_name": "refresh",
+          "_type": "button",
+          "_node": "/output",
+          "_script_callback": "self.node().refresh()",
+          "_value": ""
+        },
+        "format_output": {
+          "_name": "format_output",
+          "_type": "toggle",
+          "_node": "/output",
+          "_script_callback": "",
+          "_value": true
+        }
+      },
+      "_connections": [
+        {
+          "input_index": 0,
+          "output_node_path": "/fill_skeleton",
+          "input_node_path": "/output",
+          "output_index": 0
+        }
+      ]
+    }
+  },
+  "globals": {}
+}

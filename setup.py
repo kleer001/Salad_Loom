@@ -1,0 +1,38 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="SALAD_LOOM",
+    version="0.0.1",
+    author="Clear Menser",
+    author_email="kleer001code@gmail.com",
+    description="A modular absurdist text synthesizer — procedural nonsense, one node at a time.",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/kleer001/Salad_Loom",
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
+    install_requires=[
+        "textual>=0.52.1",
+    ],
+    extras_require={
+        'repl': ['ipython>=7.0.0'],
+    },
+    entry_points={
+        'console_scripts': [
+            'tloom=repl.tloom_shell:main',
+        ],
+    },
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+    ],
+    python_requires=">=3.8",
+    include_package_data=True,
+    package_data={
+        "TUI": ["themes/*"],
+    },
+)
