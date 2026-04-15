@@ -11,6 +11,14 @@ REM   bootstrap.bat
 echo.
 echo === Salad Loom Bootstrap ===
 echo.
+echo Disk space warning: This install downloads and unpacks approximately ~1 GB of data:
+echo   - Python packages (spaCy, gensim, nltk, litellm, textual...)   ~750 MB
+echo   - NLTK language data (tokenizer, tagger, lexicons)              ~110 MB
+echo   - GloVe word vectors (glove-wiki-gigaword-50)                    ~88 MB
+echo Make sure you have at least 1.5 GB of free disk space before continuing.
+echo Press Ctrl-C now to cancel, or wait 5 seconds to proceed...
+echo.
+timeout /t 5
 
 REM -------------------------------------------------------
 REM Step 1: Check prerequisites

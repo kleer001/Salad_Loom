@@ -22,6 +22,13 @@ warn() { echo -e "${YELLOW}[!!]${NC}   $1"; }
 info() { echo -e "${CYAN}[..]${NC}   $1"; }
 
 echo -e "\n${BOLD}=== Salad Loom Bootstrap ===${NC}\n"
+echo -e "${YELLOW}${BOLD}Disk space warning:${NC} This install downloads and unpacks approximately ${BOLD}~1 GB${NC} of data:"
+echo -e "  • Python packages (spaCy, gensim, nltk, litellm, textual…)  ~750 MB"
+echo -e "  • NLTK language data (tokenizer, tagger, lexicons)           ~110 MB"
+echo -e "  • GloVe word vectors (glove-wiki-gigaword-50)                 ~88 MB"
+echo -e "Make sure you have at least ${BOLD}1.5 GB${NC} of free disk space before continuing."
+echo -e "Press ${BOLD}Ctrl-C${NC} now to cancel, or wait 5 seconds to proceed...\n"
+sleep 5
 
 OS="$(uname -s)"
 case "$OS" in

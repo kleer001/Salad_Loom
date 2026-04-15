@@ -13,10 +13,8 @@ It ships with five interfaces: TUI, GUI, API, REPL, and batch mode.
 ## Hello World: Cook → Nonsense in 30 seconds
 
 ```bash
-# Install
-git clone https://github.com/kleer001/Salad_Loom
-cd Salad_Loom
-./install.sh
+# One-command install (~1 GB: packages + NLP models)
+curl -sSL https://raw.githubusercontent.com/kleer001/Salad_Loom/main/bootstrap.sh | bash
 
 # Load a cookbook, run N+7, watch nouns mutate
 ./salad_loom -b -f examples/recipes/n_plus_7.json
@@ -29,7 +27,19 @@ Output: `"Dissolve suppression in hot waterfall and stir until the moan thickens
 
 ## What Is Word Salad Generation?
 
-Word salad generation is the art of producing syntactically plausible but semantically unhinged text. It draws on a long tradition: the Dadaist cut-up technique of Tzara and Burroughs, the Oulipo constraint of N+7, Brion Gysin's fold-in method, and the probabilistic drift of Markov chains. Salad Loom puts all of these in a visual node graph so you can combine, chain, and mutate them interactively.
+Word salad generation is the art of producing syntactically plausible but semantically unhinged text. It draws on a long lineage of procedural and constrained writing:
+
+- **[Tristan Tzara](https://en.wikipedia.org/wiki/Tristan_Tzara)** (1920) — Dada poet who published instructions for a chance-operation poem: cut words from a newspaper, shake them in a bag, draw them out, copy in order. The original recipe is [here in his own words](https://www.writing.upenn.edu/~afilreis/88v/tzara.html).
+
+- **[Brion Gysin](https://www.briongysin.com/cut-ups/)** (1958) — Painter and writer who accidentally invented the cut-up technique at the Beat Hotel in Paris, slicing pages of text and recombining them. His estate's site has the full story. [William S. Burroughs](https://www.ubu.com/papers/burroughs_gysin.html) adopted the method from Gysin and famously wrote: *"Brion Gysin was the first to create cut-ups."*
+
+- **[William S. Burroughs](https://www.openculture.com/2011/08/william_s_burroughs_on_the_art_of_cutup_writing.html)** — Novelist who popularized the cut-up and developed the fold-in method (folding two pages together to splice text mid-line), first deployed in *The Ticket That Exploded* (1962). [The Cut-Ups (1966)](https://www.youtube.com/watch?v=Uq_hztHJCM4), a film by Burroughs and Antony Balch, applies the technique to cinema.
+
+- **[Oulipo](https://poets.org/text/brief-guide-oulipo)** — "Ouvroir de littérature potentielle" (workshop of potential literature), founded 1960 by Raymond Queneau and François Le Lionnais. Systematized constraint-based writing as a generative art form. **[Jean Lescure](https://www.oulipo.net/oulipiens/JL)**, founding member #7, invented the N+7 (S+7) constraint on February 13, 1961: replace every noun with the seventh noun following it in a chosen dictionary.
+
+- **[Andrei Markov](https://en.wikipedia.org/wiki/Andrey_Markov)** (1906/1913) — Russian mathematician who developed the probability chains bearing his name, and in 1913 applied them to literary text by analyzing vowel/consonant transitions in Pushkin's *Eugene Onegin*. Claude Shannon later extended Markov's math into language modeling, laying the groundwork for stochastic text generation.
+
+Salad Loom puts all of these in a visual node graph so you can combine, chain, and mutate them interactively.
 
 ---
 
