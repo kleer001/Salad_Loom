@@ -1,0 +1,232 @@
+{
+  "software": "Salad Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-15T00:00:00.000000",
+  "nodes": {
+    "/cookbook_in": {
+      "_node_type": "file_in",
+      "_path": "/cookbook_in",
+      "_name": "cookbook_in",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [0, 0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/cookbook_in", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/cookbook_in", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/cookbook_in", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/cookbook_in", "_script_callback": "", "_value": "data/corpora/cookbook.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/cookbook_in", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/cookbook_in", "_script_callback": "self.node().refresh()", "_value": ""}
+      },
+      "_connections": []
+    },
+    "/skel_ext": {
+      "_node_type": "skeleton_extract",
+      "_path": "/skel_ext",
+      "_name": "skel_ext",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [300, 0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/skel_ext", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/skel_ext", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/skel_ext", "_script_callback": "", "_value": false},
+        "preserve": {"_name": "preserve", "_type": "string", "_node": "/skel_ext", "_script_callback": "", "_value": "DT,IN,CC,TO,PRP,PRP$,MD,WP,WP$,WDT,WRB,RP,EX,UH,CD,NNP,NNPS,PDT,FW,LS,SYM,RB,RBR,RBS,JJR,JJS"},
+        "slot_format": {"_name": "slot_format", "_type": "string", "_node": "/skel_ext", "_script_callback": "", "_value": "[{tag}]"}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/cookbook_in", "input_node_path": "/skel_ext", "output_index": 0}
+      ]
+    },
+    "/marine_in": {
+      "_node_type": "file_in",
+      "_path": "/marine_in",
+      "_name": "marine_in",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [0, 200],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/marine_in", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/marine_in", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/marine_in", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/marine_in", "_script_callback": "", "_value": "data/corpora/marine_words.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/marine_in", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/marine_in", "_script_callback": "self.node().refresh()", "_value": ""}
+      },
+      "_connections": []
+    },
+    "/legal_in": {
+      "_node_type": "file_in",
+      "_path": "/legal_in",
+      "_name": "legal_in",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [0, 400],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/legal_in", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/legal_in", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/legal_in", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/legal_in", "_script_callback": "", "_value": "data/corpora/legal_adjectives.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/legal_in", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/legal_in", "_script_callback": "self.node().refresh()", "_value": ""}
+      },
+      "_connections": []
+    },
+    "/pool_merge": {
+      "_node_type": "merge",
+      "_path": "/pool_merge",
+      "_name": "pool_merge",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [300, 300],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/pool_merge", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/pool_merge", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/pool_merge", "_script_callback": "", "_value": false},
+        "single_string": {"_name": "single_string", "_type": "toggle", "_node": "/pool_merge", "_script_callback": "", "_value": false},
+        "insert_string": {"_name": "insert_string", "_type": "string", "_node": "/pool_merge", "_script_callback": "", "_value": ""},
+        "use_insert": {"_name": "use_insert", "_type": "toggle", "_node": "/pool_merge", "_script_callback": "", "_value": false}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/marine_in", "input_node_path": "/pool_merge", "output_index": 0},
+        {"input_index": 1, "output_node_path": "/legal_in", "input_node_path": "/pool_merge", "output_index": 0}
+      ]
+    },
+    "/fill": {
+      "_node_type": "skeleton_fill",
+      "_path": "/fill",
+      "_name": "fill",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [600, 100],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": false},
+        "mode": {"_name": "mode", "_type": "string", "_node": "/fill", "_script_callback": "", "_value": "random"},
+        "seed": {"_name": "seed", "_type": "int", "_node": "/fill", "_script_callback": "", "_value": 42},
+        "allow_repeats": {"_name": "allow_repeats", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": true}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/skel_ext", "input_node_path": "/fill", "output_index": 0},
+        {"input_index": 1, "output_node_path": "/pool_merge", "input_node_path": "/fill", "output_index": 0}
+      ]
+    },
+    "/looper": {
+      "_node_type": "looper",
+      "_path": "/looper",
+      "_name": "looper",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [900, 100],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/looper", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/looper", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/looper", "_script_callback": "", "_value": false},
+        "min": {"_name": "min", "_type": "int", "_node": "/looper", "_script_callback": "", "_value": 1},
+        "max": {"_name": "max", "_type": "int", "_node": "/looper", "_script_callback": "", "_value": 3},
+        "step": {"_name": "step", "_type": "int", "_node": "/looper", "_script_callback": "", "_value": 1},
+        "max_from_input": {"_name": "max_from_input", "_type": "toggle", "_node": "/looper", "_script_callback": "", "_value": false},
+        "feedback_mode": {"_name": "feedback_mode", "_type": "toggle", "_node": "/looper", "_script_callback": "", "_value": true},
+        "use_test": {"_name": "use_test", "_type": "toggle", "_node": "/looper", "_script_callback": "", "_value": false},
+        "cook_loops": {"_name": "cook_loops", "_type": "toggle", "_node": "/looper", "_script_callback": "", "_value": false},
+        "test_number": {"_name": "test_number", "_type": "int", "_node": "/looper", "_script_callback": "", "_value": 1},
+        "input_hook": {"_name": "input_hook", "_type": "string", "_node": "/looper", "_script_callback": "", "_value": ""},
+        "output_hook": {"_name": "output_hook", "_type": "string", "_node": "/looper", "_script_callback": "", "_value": ""},
+        "staging_data": {"_name": "staging_data", "_type": "stringList", "_node": "/looper", "_script_callback": "", "_value": []},
+        "timeout_limit": {"_name": "timeout_limit", "_type": "float", "_node": "/looper", "_script_callback": "", "_value": 300.0},
+        "data_limit": {"_name": "data_limit", "_type": "int", "_node": "/looper", "_script_callback": "", "_value": 209715200}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/fill", "input_node_path": "/looper", "output_index": 0}
+      ]
+    },
+    "/looper/inputNullNode": {
+      "_node_type": "input_null",
+      "_path": "/looper/inputNullNode",
+      "_name": "inputNullNode",
+      "_is_internal": true,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [0.0, 0.0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/looper/inputNullNode", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/looper/inputNullNode", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/looper/inputNullNode", "_script_callback": "", "_value": false},
+        "in_node": {"_name": "in_node", "_type": "string", "_node": "/looper/inputNullNode", "_script_callback": "", "_value": "/looper"},
+        "in_data": {"_name": "in_data", "_type": "stringList", "_node": "/looper/inputNullNode", "_script_callback": "", "_value": []},
+        "feedback_mode": {"_name": "feedback_mode", "_type": "toggle", "_node": "/looper/inputNullNode", "_script_callback": "", "_value": true}
+      },
+      "_connections": []
+    },
+    "/looper/shuffle": {
+      "_node_type": "shuffle",
+      "_path": "/looper/shuffle",
+      "_name": "shuffle",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [300.0, 0.0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/looper/shuffle", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/looper/shuffle", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/looper/shuffle", "_script_callback": "", "_value": false},
+        "seed": {"_name": "seed", "_type": "int", "_node": "/looper/shuffle", "_script_callback": "", "_value": -1},
+        "mode": {"_name": "mode", "_type": "string", "_node": "/looper/shuffle", "_script_callback": "", "_value": "sentences"}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/looper/inputNullNode", "input_node_path": "/looper/shuffle", "output_index": 0}
+      ]
+    },
+    "/looper/outputNullNode": {
+      "_node_type": "output_null",
+      "_path": "/looper/outputNullNode",
+      "_name": "outputNullNode",
+      "_is_internal": true,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [600.0, 0.0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/looper/outputNullNode", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/looper/outputNullNode", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/looper/outputNullNode", "_script_callback": "", "_value": false},
+        "out_data": {"_name": "out_data", "_type": "stringList", "_node": "/looper/outputNullNode", "_script_callback": "", "_value": []},
+        "feedback_mode": {"_name": "feedback_mode", "_type": "toggle", "_node": "/looper/outputNullNode", "_script_callback": "", "_value": true},
+        "cook_loops": {"_name": "cook_loops", "_type": "toggle", "_node": "/looper/outputNullNode", "_script_callback": "", "_value": false},
+        "in_node": {"_name": "in_node", "_type": "string", "_node": "/looper/outputNullNode", "_script_callback": "", "_value": "/looper"}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/looper/shuffle", "input_node_path": "/looper/outputNullNode", "output_index": 0}
+      ]
+    },
+    "/file_out": {
+      "_node_type": "file_out",
+      "_path": "/file_out",
+      "_name": "file_out",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [1200, 100],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/file_out", "_script_callback": "", "_value": "./salad.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/file_out", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/file_out", "_script_callback": "self.node().refresh()", "_value": ""},
+        "format_output": {"_name": "format_output", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": true}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/looper", "input_node_path": "/file_out", "output_index": 0}
+      ]
+    }
+  },
+  "globals": {}
+}

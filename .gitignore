@@ -285,3 +285,6 @@ src/dependency_analyzer.py
 src/extract_class.py
 src/find_imports.py
 src/import_analyzer.py
+
+# Experiments folder - local only
+experiments/

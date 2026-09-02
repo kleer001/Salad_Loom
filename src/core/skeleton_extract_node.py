@@ -8,7 +8,7 @@ from core.base_classes import Node, NodeType, NodeState
 from core.enums import FunctionalGroup
 from core.parm import Parm, ParameterType
 
-_DEFAULT_PRESERVE = "DT,IN,CC,TO,PRP,MD"
+_DEFAULT_PRESERVE = "DT,IN,CC,TO,PRP,PRP$,MD,WP,WP$,WDT,WRB,RP,EX,UH,CD,NNP,NNPS,PDT,FW,LS,SYM,RB,RBR,RBS,JJR,JJS"
 _DEFAULT_SLOT_FORMAT = "[{tag}]"
 
 

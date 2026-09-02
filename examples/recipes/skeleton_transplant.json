@@ -106,7 +106,7 @@
           "_type": "string",
           "_node": "/extract_skeleton",
           "_script_callback": "",
-          "_value": "DT,IN,CC,TO,PRP,MD"
+          "_value": "DT,IN,CC,TO,PRP,PRP$,MD,WP,WP$,WDT,WRB,RP,EX,UH,CD,NNP,NNPS,PDT,FW,LS,SYM,RB,RBR,RBS,JJR,JJS"
         },
         "slot_format": {
           "_name": "slot_format",

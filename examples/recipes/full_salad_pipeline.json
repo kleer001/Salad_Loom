@@ -1,0 +1,241 @@
+{
+  "software": "Salad Loom",
+  "version": 0.01,
+  "timestamp": "2026-04-15T00:00:00.000000",
+  "nodes": {
+    "/romance_in": {
+      "_node_type": "file_in",
+      "_path": "/romance_in",
+      "_name": "romance_in",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [0, 0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/romance_in", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/romance_in", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/romance_in", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/romance_in", "_script_callback": "", "_value": "data/corpora/romance.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/romance_in", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/romance_in", "_script_callback": "self.node().refresh()", "_value": ""}
+      },
+      "_connections": []
+    },
+    "/markov_train": {
+      "_node_type": "markov_train",
+      "_path": "/markov_train",
+      "_name": "markov_train",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [300, 0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/markov_train", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/markov_train", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/markov_train", "_script_callback": "", "_value": false},
+        "state_size": {"_name": "state_size", "_type": "int", "_node": "/markov_train", "_script_callback": "", "_value": 2},
+        "retain_newlines": {"_name": "retain_newlines", "_type": "toggle", "_node": "/markov_train", "_script_callback": "", "_value": false}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/romance_in", "input_node_path": "/markov_train", "output_index": 0}
+      ]
+    },
+    "/markov_gen": {
+      "_node_type": "markov_generate",
+      "_path": "/markov_gen",
+      "_name": "markov_gen",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [600, 0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/markov_gen", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/markov_gen", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/markov_gen", "_script_callback": "", "_value": false},
+        "count": {"_name": "count", "_type": "int", "_node": "/markov_gen", "_script_callback": "", "_value": 50},
+        "max_chars": {"_name": "max_chars", "_type": "int", "_node": "/markov_gen", "_script_callback": "", "_value": 200},
+        "tries": {"_name": "tries", "_type": "int", "_node": "/markov_gen", "_script_callback": "", "_value": 100},
+        "seed": {"_name": "seed", "_type": "int", "_node": "/markov_gen", "_script_callback": "", "_value": -1}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/markov_train", "input_node_path": "/markov_gen", "output_index": 0}
+      ]
+    },
+    "/skel_ext": {
+      "_node_type": "skeleton_extract",
+      "_path": "/skel_ext",
+      "_name": "skel_ext",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [900, 0],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/skel_ext", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/skel_ext", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/skel_ext", "_script_callback": "", "_value": false},
+        "preserve": {"_name": "preserve", "_type": "string", "_node": "/skel_ext", "_script_callback": "", "_value": "DT,IN,CC,TO,PRP,PRP$,MD,WP,WP$,WDT,WRB,RP,EX,UH,CD,NNP,NNPS,PDT,FW,LS,SYM,RB,RBR,RBS,JJR,JJS"},
+        "slot_format": {"_name": "slot_format", "_type": "string", "_node": "/skel_ext", "_script_callback": "", "_value": "[{tag}]"}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/markov_gen", "input_node_path": "/skel_ext", "output_index": 0}
+      ]
+    },
+    "/cookbook_in": {
+      "_node_type": "file_in",
+      "_path": "/cookbook_in",
+      "_name": "cookbook_in",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [900, 200],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/cookbook_in", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/cookbook_in", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/cookbook_in", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/cookbook_in", "_script_callback": "", "_value": "data/corpora/cookbook_words.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/cookbook_in", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/cookbook_in", "_script_callback": "self.node().refresh()", "_value": ""}
+      },
+      "_connections": []
+    },
+    "/fill": {
+      "_node_type": "skeleton_fill",
+      "_path": "/fill",
+      "_name": "fill",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [1200, 100],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": false},
+        "mode": {"_name": "mode", "_type": "string", "_node": "/fill", "_script_callback": "", "_value": "random"},
+        "seed": {"_name": "seed", "_type": "int", "_node": "/fill", "_script_callback": "", "_value": 7},
+        "allow_repeats": {"_name": "allow_repeats", "_type": "toggle", "_node": "/fill", "_script_callback": "", "_value": true}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/skel_ext", "input_node_path": "/fill", "output_index": 0},
+        {"input_index": 1, "output_node_path": "/cookbook_in", "input_node_path": "/fill", "output_index": 0}
+      ]
+    },
+    "/legal_in": {
+      "_node_type": "file_in",
+      "_path": "/legal_in",
+      "_name": "legal_in",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [1200, 300],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/legal_in", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/legal_in", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/legal_in", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/legal_in", "_script_callback": "", "_value": "data/corpora/legal_adjectives.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/legal_in", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/legal_in", "_script_callback": "self.node().refresh()", "_value": ""}
+      },
+      "_connections": []
+    },
+    "/interleave": {
+      "_node_type": "interleave",
+      "_path": "/interleave",
+      "_name": "interleave",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [1500, 200],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/interleave", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/interleave", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/interleave", "_script_callback": "", "_value": false},
+        "mode": {"_name": "mode", "_type": "string", "_node": "/interleave", "_script_callback": "", "_value": "sentences"},
+        "ratio": {"_name": "ratio", "_type": "string", "_node": "/interleave", "_script_callback": "", "_value": "3:1"}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/fill", "input_node_path": "/interleave", "output_index": 0},
+        {"input_index": 1, "output_node_path": "/legal_in", "input_node_path": "/interleave", "output_index": 0}
+      ]
+    },
+    "/split": {
+      "_node_type": "split",
+      "_path": "/split",
+      "_name": "split",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [1800, 200],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/split", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/split", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/split", "_script_callback": "", "_value": false},
+        "split_expr": {"_name": "split_expr", "_type": "string", "_node": "/split", "_script_callback": "", "_value": "[::5]"}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/interleave", "input_node_path": "/split", "output_index": 0}
+      ]
+    },
+    "/shuffle": {
+      "_node_type": "shuffle",
+      "_path": "/shuffle",
+      "_name": "shuffle",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [2100, 100],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/shuffle", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/shuffle", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/shuffle", "_script_callback": "", "_value": false},
+        "seed": {"_name": "seed", "_type": "int", "_node": "/shuffle", "_script_callback": "", "_value": -1},
+        "mode": {"_name": "mode", "_type": "string", "_node": "/shuffle", "_script_callback": "", "_value": "words"}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/split", "input_node_path": "/shuffle", "output_index": 0}
+      ]
+    },
+    "/merge_out": {
+      "_node_type": "merge",
+      "_path": "/merge_out",
+      "_name": "merge_out",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [2400, 200],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/merge_out", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/merge_out", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/merge_out", "_script_callback": "", "_value": false},
+        "single_string": {"_name": "single_string", "_type": "toggle", "_node": "/merge_out", "_script_callback": "", "_value": false},
+        "insert_string": {"_name": "insert_string", "_type": "string", "_node": "/merge_out", "_script_callback": "", "_value": ""},
+        "use_insert": {"_name": "use_insert", "_type": "toggle", "_node": "/merge_out", "_script_callback": "", "_value": false}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/shuffle", "input_node_path": "/merge_out", "output_index": 0},
+        {"input_index": 1, "output_node_path": "/split", "input_node_path": "/merge_out", "output_index": 1}
+      ]
+    },
+    "/file_out": {
+      "_node_type": "file_out",
+      "_path": "/file_out",
+      "_name": "file_out",
+      "_is_internal": false,
+      "_selected": false,
+      "_color": [1.0, 1.0, 1.0],
+      "_position": [2700, 200],
+      "_parms": {
+        "enabled": {"_name": "enabled", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": true},
+        "bypass": {"_name": "bypass", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": false},
+        "display": {"_name": "display", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": false},
+        "file_name": {"_name": "file_name", "_type": "string", "_node": "/file_out", "_script_callback": "", "_value": "./the_full_salad.txt"},
+        "file_text": {"_name": "file_text", "_type": "string", "_node": "/file_out", "_script_callback": "", "_value": ""},
+        "refresh": {"_name": "refresh", "_type": "button", "_node": "/file_out", "_script_callback": "self.node().refresh()", "_value": ""},
+        "format_output": {"_name": "format_output", "_type": "toggle", "_node": "/file_out", "_script_callback": "", "_value": true}
+      },
+      "_connections": [
+        {"input_index": 0, "output_node_path": "/merge_out", "input_node_path": "/file_out", "output_index": 0}
+      ]
+    }
+  },
+  "globals": {}
+}
